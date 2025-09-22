@@ -1,0 +1,36 @@
+.card_block {
+    .card-body {
+        @media (min-width:1200px) {
+            p {
+                min-height: 9rem;
+            }
+        }
+        @media (min-width:1400px) {
+            p {
+                min-height: 7rem;
+            }
+        }
+    }
+}
+
+.cb_product, .cb_benefit {
+    .card {
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
+}
+
+.children {
+    a {
+        text-decoration: none;
+        &:hover {
+            .card {
+                transform: translateY(4px);
+                box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            }
+        }
+    }
+    .card {
+        transition: all 0.3s ease;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+}

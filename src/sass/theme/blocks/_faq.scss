@@ -1,0 +1,72 @@
+.question {
+    color: #000;
+    font-size: clamp(1.2rem, 10vw, 1.5rem);
+    position: relative;
+    padding-right: 1.2em;
+    line-height: 1.2;
+    // margin-bottom: 1rem;
+    cursor: pointer;
+
+    &.collapsed::after {
+        background: url(../img/plus.svg);
+    }
+
+    &::after {
+        position: absolute;
+        right: 0;
+        top: 0.5rem;
+        content: "";
+        margin-right: 0.5rem;
+        background: url(../img/minus.svg);
+        width: 30px;
+        height: 30px;
+        background-repeat: no-repeat !important;
+        background-position: top right;
+        background-size: auto;
+    }
+    &--health::after {
+        background: url(../img/minus--health.svg);
+    }
+    &--health.collapsed::after {
+        background: url(../img/plus--health.svg);
+    }
+    &--travel::after {
+        background: url(../img/minus--travel.svg);
+    }
+    &--travel.collapsed::after {
+        background: url(../img/plus--travel.svg);
+    }
+    &--life::after {
+        background: url(../img/minus--life.svg);
+    }
+    &--life.collapsed::after {
+        background: url(../img/plus--life.svg);
+    }
+    &--income::after {
+        background: url(../img/minus--income.svg);
+    }
+    &--income.collapsed::after {
+        background: url(../img/plus--income.svg);
+    }
+}
+
+@media screen and (max-width:992px) {
+    .question {
+        padding-right: 2.2em;
+    }
+}
+
+.answer {
+    max-width: 110ch;
+    p {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.faq {
+    li {
+        padding: 0;
+        margin: 0;
+        list-style: disc;
+    }
+}

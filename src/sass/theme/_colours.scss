@@ -1,0 +1,16 @@
+.bg--grey-100 {
+    background-color: $grey-100;
+}
+
+.half-bg {
+	background: linear-gradient(180deg, #fff 70%, $primary 30%);
+}
+
+.bg-white {
+	background: #fff;
+}
+
+.bg-life {
+	background: $life;
+	color: black;
+}

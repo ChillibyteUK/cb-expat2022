@@ -1,0 +1,32 @@
+.benefit_icon {
+	max-width: 61px;
+}
+
+.benefit_table {
+    font-size: 0.75rem;
+    .collapsing {
+        transition: none !important;
+    }
+    .benefit__title {
+        font-size: 1rem;
+        font-weight: 700;
+        background-color: $grey-100;
+    }
+
+    &--health {
+        tbody tr:first-child {
+            border-top: 1px solid $health;
+        }
+    }
+    &--travel {
+        tbody tr:first-child {
+            border-top: 1px solid $travel;
+        }
+    }
+    td {
+        border-bottom-color: rgb(222, 226, 230);
+    }
+    :last-child>* {
+        border-bottom: none;
+    }
+}

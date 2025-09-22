@@ -1,0 +1,46 @@
+#tstDots .slick-dots li button:before ,
+#whyDots .slick-dots li button:before {
+    font-size: 0.75rem;
+}
+
+#tstDots .slick-dots li.slick-active button:before,
+#whyDots .slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: $dot-green;
+}
+
+.appendDots .slick-dots,
+#tstDots .slick-dots,
+#whyDots .slick-dots {
+    text-align: left;
+    position: relative;
+    bottom: 5px;
+    margin: 0 20px;
+}
+
+.slick-track {
+    display: flex !important;
+    padding-bottom: 0.5rem;
+}
+
+.why_slick {
+    .slick-slide {
+        height: inherit !important;
+        > div {
+            height: 100%;
+        }
+    }
+}
+
+.why_slick__icon {
+    max-width: 95px;
+}
+
+.prevArrow,
+.nextArrow {
+    cursor: pointer;
+}
+
+.slick-dots {
+    width: initial !important;
+}

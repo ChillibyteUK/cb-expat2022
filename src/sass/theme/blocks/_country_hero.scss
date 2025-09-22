@@ -1,0 +1,39 @@
+.country_hero {
+    // background-color: $grey-100;
+    padding: 8rem 0 0rem 0;
+    &__title {
+        color: $black;
+    }
+    &__intro {
+        max-width: 80ch;
+        margin: auto;
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+    }
+    &__flag {
+        display: flex;
+        justify-content: center;
+        .fi {
+            width: 150px;
+            height: 150px;
+            border-radius: 50rem;
+            padding: 2px;
+            overflow: hidden;
+            background-size: cover;
+            border: 5px solid white;
+        }
+    }
+    &__map {
+        background-image: url(../img/map.png);
+        width: 100%;
+        @media(min-width:992px) {
+            width:70%;
+            margin: auto;
+        }
+        aspect-ratio: 2 / 1;
+        background-size: contain;
+        background-position: center;
+        height: auto;
+        position: relative;
+    }
+}

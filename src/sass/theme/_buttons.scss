@@ -1,0 +1,151 @@
+.btn:not(.btn--tab) {
+    border-radius: 50rem;
+    padding: 0.575rem 1.5rem;
+    transition: all 0.3s ease;
+    // box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    &:hover {
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        transform: translateY(2px);
+    }
+}
+
+.btn-white {
+	color: $primary;
+    background-color: #fff;
+    border-color: $primary;
+    &:hover {
+        color: #fff;
+        background-color: $primary;
+        border-color: $primary;
+    }
+}
+.btn-white--inverse {
+    color: $primary;
+    background-color: #fff;
+    border-color: $primary;
+    &:hover {
+        background-color: $primary;
+        color: #fff;
+        border-color: $primary;
+    }
+}
+
+.btn-default {
+	color: #fff;
+    background-color: $primary;
+    border-color: $primary;
+    &:hover {
+        color: $primary;
+        background-color: #fff;
+        border-color: $primary;
+    }
+    &.more {
+        position: relative;
+        &::after {
+            content: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.21484 2.96484L10.2498 5.99984L7.21484 9.03484' stroke='%23fff' stroke-width='0.75' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1.75 6H10.165' stroke='%23fff' stroke-width='0.75' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+            margin-left: 5px;
+            transition: all 0.3s ease;
+        }
+        &:hover::after {
+            content: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.21484 2.96484L10.2498 5.99984L7.21484 9.03484' stroke='%23164E95' stroke-width='0.75' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1.75 6H10.165' stroke='%23164E95' stroke-width='0.75' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+        }
+    }
+}
+.btn-default--inverse {
+	color: $primary;
+    background-color: #fff;
+    border-color: $primary;
+    &:hover {
+        color: #fff;
+        background-color: $primary;
+        border-color: $primary;
+    }
+}
+
+.btn-health {
+	color: #fff;
+    background-color: $health;
+    border-color: $health;
+    &:hover {
+        color: $health;
+        background-color: #fff;
+        border-color: $health;
+    }
+}
+.btn-health--inverse {
+	color: $health;
+    background-color: #fff;
+    border-color: $health;
+    &:hover {
+        color: #fff;
+        background-color: $health;
+        border-color: $health;
+    }
+}
+
+.btn-travel {
+	color: #fff;
+    background-color: $travel;
+    border-color: $travel;
+    &:hover {
+        color: $travel;
+        background-color: #fff;
+        border-color: $travel;
+    }
+}
+
+.btn-travel--inverse {
+	color: $travel;
+    background-color: #fff;
+    border-color: $travel;
+    &:hover {
+        color: #fff;
+        background-color: $travel;
+        border-color: $travel;
+    }
+}
+
+.btn-life {
+	color: #fff;
+    background-color: $life;
+    border-color: $life;
+    &:hover {
+        color: $life;
+        background-color: #fff;
+        border-color: $life;
+    }
+}
+
+.btn-life--inverse {
+	color: $life;
+    background-color: #fff;
+    border-color: $life;
+    &:hover {
+        color: #fff;
+        background-color: $life;
+        border-color: $life;
+    }
+}
+
+.btn-income {
+	color: #fff;
+    background-color: $income;
+    border-color: $income;
+    &:hover {
+        color: $income;
+        background-color: #fff;
+        border-color: $income;
+    }
+}
+
+.btn-income--inverse {
+	color: $income;
+    background-color: #fff;
+    border-color: $income;
+    &:hover {
+        color: #fff;
+        background-color: $income;
+        border-color: $income;
+    }
+}

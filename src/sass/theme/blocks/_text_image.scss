@@ -1,0 +1,47 @@
+.text_image {
+    &__image_col {
+        position: relative;
+        .key_features {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            padding: 1rem;
+            text-align: left;
+            @media (min-width:576px) {
+                position: absolute;
+                right: 1rem;
+                bottom: 0.5rem;
+                left: 1rem;
+            }
+            @media (min-width:992px) {
+                max-width: 200px;
+                &.f-left {
+                    top: 1.5rem;
+                    right: auto;
+                    bottom: auto;
+                    left: 1rem;
+                }
+                &.f-right {
+                    top: 1.5rem;
+                    right: 1rem;
+                    bottom: auto;
+                    left: auto;
+                }
+            }
+            .ul-feature {
+                margin-bottom: 0;
+                @media (min-width:576px) {
+                    columns: 2;
+                }
+                @media (min-width:992px) {
+                    columns: 1;
+                }
+                li {
+                    font-size: 0.8rem;
+                    padding: 0 0 0 1.5rem;
+                    margin-bottom: 0.5rem;
+                    background-size: 15px;
+                    background-position: left 4px;
+                }
+            }
+        }
+    }
+}

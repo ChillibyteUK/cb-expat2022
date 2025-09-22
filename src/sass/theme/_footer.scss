@@ -1,0 +1,64 @@
+footer {
+	background-color: $primary;
+    color: $lightblue;
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+    a {
+        color: $lightblue;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+.colophon {
+	border-color: #4772a8!important;
+    background-color: $primary;
+    position: relative;
+    .cb {
+        position: absolute;
+        top: 1.5rem;
+        right: 0;
+        content: url(../img/cb-mono.png);
+        opacity: .6;
+        transition: all .3s ease;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.footer-img {
+    max-width: 185px;
+}
+
+
+.gform_wrapper.gravity-theme#gform_wrapper_1 .gfield-choice-input {
+    margin-top: 6px;
+    vertical-align: top;
+}
+
+.sticky-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    .btn {
+        width: 50vw;
+    }
+    @media (min-width:992px) {
+        display: none;
+    }
+}

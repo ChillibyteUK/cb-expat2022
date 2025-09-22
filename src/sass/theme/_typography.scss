@@ -1,0 +1,135 @@
+/* lato-regular - latin */
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local(''),
+		url('../fonts/lato-v22-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		url('../fonts/lato-v22-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* lato-italic - latin */
+@font-face {
+	font-family: 'Lato';
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: local(''),
+		url('../fonts/lato-v22-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		url('../fonts/lato-v22-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* lato-700 - latin */
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: local(''),
+		url('../fonts/lato-v22-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		url('../fonts/lato-v22-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+.text--default {
+	color: $primary !important;
+}
+
+.text--health {
+	color: $health !important;
+}
+
+.text--travel {
+	color: $travel !important;
+}
+
+.text--life {
+	color: $life !important;
+}
+
+.text--income {
+	color: $income !important;
+}
+
+.text--black {
+	color: #000 !important;
+}
+
+.text--grey {
+	color: $grey !important;
+}
+
+.text--select_product {
+	color: $select_product;
+}
+
+.text--primary_product {
+	color: $primary_product;
+}
+
+.text--primary_plus_product {
+	color: $primary_plus_product;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-size: 1rem;
+	font-family: 'Lato', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+	font-weight: 700;
+	color: black;
+}
+
+h1, .h1 {
+	// font-size: clamp(2.5rem, 2.35rem + 0.75vw, 3.25rem);
+	// font-size: clamp(1.8rem, 1.8rem + 1vw, 2.6rem);
+	font-size: clamp(1.8rem, 1.05rem + 2.4vw, 2.4rem);
+}
+h2, .h2 {
+	// color: $primary;
+    // margin-bottom: 1.5rem;
+	// font-size: clamp(2rem, 1.8rem + 1vw, 3rem);
+	font-size: clamp(1.6rem, 1.48rem + 0.6vw, 2.2rem);
+}
+
+h3, .h3 {
+	// font-size: clamp(1.6rem, 1.52rem + 0.4vw, 2rem);
+	// font-size: clamp(1.4rem, 1.32rem + 0.4vw, 1.8rem);
+	font-size: clamp(1.2rem, 0.7rem + 1.6vw, 1.6rem);
+}
+
+h4, .h4 {
+	font-size: clamp(1.1rem, 0.725rem + 1.2vw, 1.4rem);
+}
+
+body, p {
+	color: $grey;
+}
+
+.fs-7 {
+	font-size: 0.9rem;
+}
+
+.fs-8 {
+	font-size: 0.8rem;
+}
+
+
+.no_background {
+	background: none !important;
+}
+
+.no_decoration {
+	text-decoration: none;
+}
+
+.mw-20ch {
+	max-width: 20ch;
+}

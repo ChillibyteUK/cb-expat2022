@@ -1,0 +1,95 @@
+#wrapper-navbar {
+    font-size: 16px;
+    background-color: white;
+    @media (min-width:992px) {
+        background-color: transparent;
+    }
+
+    transition: all .3s ease;
+    &.scrolled {
+        background-color: white;
+    }
+    .navbar-brand img {
+        width: 100%;
+        max-width: 150px;
+        @media (min-width:992px) {
+            max-width: 150px;
+        }
+        @media (min-width:1200px) {
+            max-width: 185px;
+        }
+    }
+
+    @media (min-width:1200px) {
+        a.nav-link {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+
+    #top-nav {
+        font-size: 0.875rem;
+    }
+    #main-menu {
+        li {
+            font-weight: 700;
+        }
+
+        .nav-link {
+            margin-right: 1rem;
+            @media (min-width:1400px) {
+                margin-left: 1rem;
+            }
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-bottom: 2px;
+            padding-bottom: 2px;
+        }
+        .current-menu-item {
+            a {
+                border-bottom: 2px solid $primary;
+            }
+        }
+
+    }
+    a {
+        color: $primary;
+        &:hover {
+            color: $grey;
+        }
+    }
+
+    .q-button a {
+        padding: 0.5rem 1.5rem;
+        border-radius: 50rem;
+        border: 1px solid $primary;
+        &:hover {
+            background-color: $primary;
+            color: white;
+        }
+    }
+
+    .navbar-toggler {
+        margin-right: 1rem;
+        border: none;
+        color: $primary;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    .navbar-toggler .close-icon,
+    .navbar-toggler.collapsed .close-icon {
+        display: none !important;
+    }
+  
+    .navbar-toggler:not(.collapsed) .close-icon {
+        display: inline !important;
+    }
+    .navbar-toggler:not(.collapsed) .navbar-icon {
+        display: none !important;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+}
