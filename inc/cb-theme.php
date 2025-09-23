@@ -47,14 +47,17 @@ function widgets_init()
     ));
 
     register_nav_menus(array(
-        'footer_menu1' => 'Footer Menu 1',
+        'footer_menu1' => 'Footer Menu -iPMI',
     ));
     register_nav_menus(array(
-        'footer_menu2' => 'Footer Menu 2',
+        'footer_menu2' => 'Footer Menu - Treatment',
     ));
-    // register_nav_menus(array(
-    //     'footer_menu3' => 'Footer Menu 3',
-    // ));
+    register_nav_menus(array(
+        'footer_menu3' => 'Footer Menu - Travel Insurance',
+    ));
+    register_nav_menus(array(
+        'footer_menu4' => 'Footer Menu - Other Products',
+    ));
 
     unregister_sidebar('hero');
     unregister_sidebar('herocanvas');

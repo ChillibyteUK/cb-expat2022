@@ -28,8 +28,70 @@ if ( is_front_page() ) {
 	<div class="container-xl">
         <div class="pt-5">
 
-		<div class="row mb-3">
-			<div class="col-xl-3 mb-3">
+		<div class="row g-3">
+			<div class="col-md-3">
+				<div class="row gy-3">
+					<div class="col-sm-4 col-xl-12">
+						<div class="text-white fw-bold mb-1">UK Office</div>
+						<div class="font-lightblue"><?=get_field('contact_address_uk','options')?></div>
+					</div>
+					<div class="col-sm-4 col-xl-12">
+						<div class="text-white fw-bold mb-1">EU Office</div>
+						<div class="font-lightblue"><?=get_field('contact_address','options')?></div>
+					</div>
+					<div class="col-sm-4 col-xl-12">
+						<div class="text-white fw-bold mb-1">Asia Office</div>
+						<div class="font-lightblue"><?=get_field('contact_address_asia','options')?></div>
+					</div>
+					<div class="col-sm-4 col-xl-12">
+						<div class="text-white fw-bold mb-1">Registered Address</div>
+						<div class="font-lightblue"><?=get_field('registered_address','options')?></div>
+					</div>
+					<div class="col-12">
+						<div class="text-white fw-bold mb-1"><a href="/contact-us/" class="text-white">Get in Touch</a></div>
+						<div class="font-lightblue">Tel: <?=do_shortcode('[contact_phone]')?> (UK)</div>
+						<div class="font-lightblue">Tel: <?=get_field('malaysia_phone','options')?> (MY)</div>
+						<div class="font-lightblue">Fax: <?=get_field('contact_fax','options')?></div>
+						<div class="font-lightblue">Email: <?=do_shortcode('[contact_email]')?></div>
+					</div>
+					<div class="col-12">
+						<div class="text-white fw-bold mb-1">Office Times</div>
+						<div class="font-lightblue"><?=get_field('office_times','options')?></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="text-white fw-bold mb-1">iPMI</div>
+				<div class="footer_menu"><?php
+				wp_nav_menu( array(
+					'theme_location' => 'footer_menu1'
+				) );
+				?></div>
+				<div class="text-white fw-bold mb-1">Treatment</div>
+				<div class="footer_menu"><?php
+				wp_nav_menu( array(
+					'theme_location' => 'footer_menu2'
+				) );
+				?></div>
+			</div>
+
+			<div class="col-md-3">
+				<div class="text-white fw-bold mb-1">Travel Insurance</div>
+				<div class="footer_menu mb-2"><?php
+				wp_nav_menu( array(
+					'theme_location' => 'footer_menu3'
+				) );
+				?></div>
+				<div class="text-white fw-bold mb-1">Other Products</div>
+				<div class="footer_menu mb-2"><?php
+				wp_nav_menu( array(
+					'theme_location' => 'footer_menu4'
+				) );
+				?></div>
+			</div>
+			
+			<div class="col-md-3">
 				<div class="col mb-4">
 					<img src="<?=get_stylesheet_directory_uri()?>/img/Expatriate_WHITE.svg" class="img-fluid footer-img" alt="expatriate group">
 				</div>
@@ -46,65 +108,15 @@ if ( is_front_page() ) {
 					<i class="fa fa-cc-paypal fa-2x me-0 text-white" aria-hidden="true"></i>
 				</div>
 				<div class="col mb-3">
-					<!-- TrustBox widget - Review Collector -->
-					<div class="trustpilot-widget" data-locale="en-GB" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="51e2b3e8000064000557578c" data-style-height="52px" data-style-width="100%">
-						<a href="https://uk.trustpilot.com/review/expatriatehealthcare.com" target="_blank" rel="noopener">Trustpilot</a>
-					</div>
-					<!-- End TrustBox widget -->
+					<div class="text-white fw-bold mb-3">Useful Links</div>
+					<div class="footer_menu mb-2"><?php
+					wp_nav_menu( array(
+						'theme_location' => 'footer_menu5'
+					) );
+					?></div>
 				</div>
 			</div>
-			<div class="col-xl-9">
-				<div class="row fs-7 gy-4">
-					<div class="col-sm-12 col-xl-4 order-4 order-xl-1">
-						<div class="row gy-3">
-							<div class="col-sm-4 col-xl-12">
-								<div class="text-white fw-bold mb-1">UK Office</div>
-								<div class="font-lightblue"><?=get_field('contact_address_uk','options')?></div>
-							</div>
-							<div class="col-sm-4 col-xl-12">
-								<div class="text-white fw-bold mb-1">EU Office</div>
-								<div class="font-lightblue"><?=get_field('contact_address','options')?></div>
-							</div>
-							<div class="col-sm-4 col-xl-12">
-								<div class="text-white fw-bold mb-1">Asia Office</div>
-								<div class="font-lightblue"><?=get_field('contact_address_asia','options')?></div>
-							</div>
-							<div class="col-sm-4 col-xl-12">
-								<div class="text-white fw-bold mb-1">Registered Address</div>
-								<div class="font-lightblue"><?=get_field('registered_address','options')?></div>
-							</div>
-							<div class="col-12">
-								<div class="text-white fw-bold mb-1"><a href="/contact-us/" class="text-white">Get in Touch</a></div>
-								<div class="font-lightblue">Tel: <?=do_shortcode('[contact_phone]')?> (UK)</div>
-								<div class="font-lightblue">Tel: <?=get_field('malaysia_phone','options')?> (MY)</div>
-								<div class="font-lightblue">Fax: <?=get_field('contact_fax','options')?></div>
-								<div class="font-lightblue">Email: <?=do_shortcode('[contact_email]')?></div>
-							</div>
-							<div class="col-12">
-								<div class="text-white fw-bold mb-1">Office Times</div>
-								<div class="font-lightblue"><?=get_field('office_times','options')?></div>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-4 order-1 order-xl-2">
-						<div class="text-white fw-bold mb-1">More Products</div>
-						<div class="footer_menu"><?php
-						wp_nav_menu( array(
-							'theme_location' => 'footer_menu1'
-						) );
-						?></div>
-					</div>
-					<div class="col-sm-6 col-md-4 col-xl-2 order-2 order-xl-3">
-						<div class="text-white fw-bold mb-1">Useful Links</div>
-						<div class="footer_menu mb-2"><?php
-						wp_nav_menu( array(
-							'theme_location' => 'footer_menu2'
-						) );
-						?></div>
-						<div class="text-white fw-bold mb-1"><a href="/brokers/" class="text-white">Brokers</a></div>
-					</div>
-				</div>
-			</div><!--col end -->
+
 		</div><!-- row end -->
 
 		<div class="row mb-4 pt-5">
