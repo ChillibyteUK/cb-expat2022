@@ -108,8 +108,8 @@ if ( is_front_page() ) {
 					<i class="fa fa-cc-paypal fa-2x me-0 text-white" aria-hidden="true"></i>
 				</div>
 				<div class="col mb-3">
-					<div class="text-white fw-bold mb-3">Useful Links</div>
-					<div class="footer_menu mb-2"><?php
+					<div class="text-white fw-bold mb-1">Useful Links</div>
+					<div class="footer_menu mb-4"><?php
 					wp_nav_menu( array(
 						'theme_location' => 'footer_menu5'
 					) );
