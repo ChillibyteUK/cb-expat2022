@@ -63,13 +63,13 @@ if ( is_front_page() ) {
 
 			<div class="col-md-3">
 				<div class="text-white fw-bold mb-1">iPMI</div>
-				<div class="footer_menu"><?php
+				<div class="footer_menu mb-4"><?php
 				wp_nav_menu( array(
 					'theme_location' => 'footer_menu1'
 				) );
 				?></div>
 				<div class="text-white fw-bold mb-1">Treatment</div>
-				<div class="footer_menu"><?php
+				<div class="footer_menu mb-4"><?php
 				wp_nav_menu( array(
 					'theme_location' => 'footer_menu2'
 				) );
@@ -78,13 +78,13 @@ if ( is_front_page() ) {
 
 			<div class="col-md-3">
 				<div class="text-white fw-bold mb-1">Travel Insurance</div>
-				<div class="footer_menu mb-2"><?php
+				<div class="footer_menu mb-4"><?php
 				wp_nav_menu( array(
 					'theme_location' => 'footer_menu3'
 				) );
 				?></div>
 				<div class="text-white fw-bold mb-1">Other Products</div>
-				<div class="footer_menu mb-2"><?php
+				<div class="footer_menu mb-4"><?php
 				wp_nav_menu( array(
 					'theme_location' => 'footer_menu4'
 				) );
