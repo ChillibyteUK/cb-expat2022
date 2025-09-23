@@ -47,7 +47,7 @@ function widgets_init()
     ));
 
     register_nav_menus(array(
-        'footer_menu1' => 'Footer Menu -iPMI',
+        'footer_menu1' => 'Footer Menu - iPMI',
     ));
     register_nav_menus(array(
         'footer_menu2' => 'Footer Menu - Treatment',
@@ -57,6 +57,9 @@ function widgets_init()
     ));
     register_nav_menus(array(
         'footer_menu4' => 'Footer Menu - Other Products',
+    ));
+    register_nav_menus(array(
+        'footer_menu5' => 'Footer Menu - Useful Links',
     ));
 
     unregister_sidebar('hero');
