@@ -89,7 +89,7 @@ foreach ($continents as $c) {
                     foreach ( $posts as $post ) {
                         if ( $count == 1 ) {
                         ?>
-                        <a href="<?php echo get_the_permalink($post); ?>" class="mb-3 fi fis fi-<?=get_field('country_code',$post)?>"></a>
+                        <a href="<?php echo get_the_permalink($post); ?>" class="mb-3 fi fis fi-<?=strtolower(get_field('country_code',$post))?>"></a>
                         <?php
                         }
                     ?>
