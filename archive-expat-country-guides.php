@@ -85,7 +85,7 @@ foreach ($continents as $c) {
                 ?>
             <div class="col-6 col-md-4 col-lg-2">
                 <a href="<?=$country_link?>" class="archive__card">
-                    <div class="fi fis fi-<?=get_field('country_code',get_the_ID())?>"></div>
+                    <div class="fi fis fi-<?=strtolower(get_field('country_code',get_the_ID()))?>"></div>
                     <div class="archive__title">Moving to<br><?=get_the_title(get_the_ID())?></div>
                 </a>
             </div>
