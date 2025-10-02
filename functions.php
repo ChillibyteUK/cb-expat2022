@@ -201,3 +201,11 @@ function get_country_guides_by_country( $country_name ) {
 
     return $query->posts;
 }
+
+// Add shortcode [srg_logo]
+function srg_logo_shortcode() {
+    $logo_url = 'https://www.expatriatehealthcare.com/wp-content/uploads/2025/10/SRG-Teal-300x60.png';
+
+    return '<img src="' . esc_url( $logo_url ) . '" alt="SRG Logo" class="img-fluid float-end" />';
+}
+add_shortcode( 'srg_logo', 'srg_logo_shortcode' );
