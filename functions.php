@@ -190,6 +190,8 @@ function get_country_guides_by_country( $country_name ) {
         'post_type'      => 'expat-country-guides',
         'post_status'    => 'publish',
         'posts_per_page' => -1,
+        'orderby' => 'title',
+        'order' => 'DESC',
         'meta_query'     => [
             [
                 'key'     => 'country',
