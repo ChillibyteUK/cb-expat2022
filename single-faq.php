@@ -15,11 +15,6 @@ the_post();
     <div class="container-xl py-5">
         <div class="row mb-5">
             <a href="javascript:history.go(-1)" class="back">Back</a>
-			<?php
-			if ( function_exists( 'yoast_breadcrumb' ) ) {
-				yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
-			}
-			?>
             <div class="col-md-8 post">
                 <h1 class="text--default"><?= esc_html( get_the_title() ); ?></h1>
                 <?php the_content(); ?>
