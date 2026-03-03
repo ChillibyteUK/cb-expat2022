@@ -212,3 +212,87 @@ function srg_logo_shortcode() {
         class="img-fluid mx-auto d-block d-sm-inline float-sm-end ms-sm-3 mb-3 srg-logo" /></a>';
 }
 add_shortcode( 'srg_logo', 'srg_logo_shortcode' );
+
+function ehc_normalise_date_ddmmyyyy($raw) {
+    $raw = trim((string) $raw);
+    if ($raw === '') return '';
+
+    $formats = ['d/m/Y', 'd-m-Y', 'Y-m-d', 'Y/m/d'];
+
+    foreach ($formats as $fmt) {
+        $dt = DateTime::createFromFormat($fmt, $raw);
+        if ($dt) {
+            return $dt->format('d/m/Y');
+        }
+    }
+
+    // already dd/mm/yyyy?
+    if (preg_match('~^\d{2}/\d{2}/\d{4}$~', $raw)) return $raw;
+
+    return '';
+}
+
+add_action('gform_after_submission_4', function($entry, $form) {
+
+    $target = 'https://quote.expatriatehealthcare.com/healthcare';
+
+    $qty   = (int) rgar($entry, '1');   // People to insure (field 1)
+    $cover = (string) rgar($entry, '3'); // Area of cover (field 3)
+    $email = (string) rgar($entry, '4'); // Email (field 4)
+
+    // Cover: your GF stores the LABEL text, but target expects 1/2/3.
+    // Map by prefix:
+    $coverVal = '0';
+    if (stripos($cover, 'Area 1') === 0) $coverVal = '1';
+    if (stripos($cover, 'Area 2') === 0) $coverVal = '2';
+    if (stripos($cover, 'Area 3') === 0) $coverVal = '3';
+
+    // GF field IDs for DOB1..DOB10 in your form are 5..14
+    $dobFieldIds = range(5, 14);
+
+    $post = [
+        'QtyPeople'  => (string) $qty,
+        'Cover'      => $coverVal,
+        'Email'      => $email,
+        'QuickQuote' => '1',
+        'QuoteID'    => '0',
+        'Step'       => '1',
+        'Section'    => 'process',
+    ];
+
+    // Fill DOB fields up to qty selected
+    for ($i = 1; $i <= min($qty, 10); $i++) {
+        $gfFieldId = (string) (4 + $i); // 5..14
+        $rawDob    = (string) rgar($entry, $gfFieldId);
+
+        $dob = ehc_normalise_date_ddmmyyyy($rawDob);
+
+        // send the combined DOB string
+        $post["DOB{$i}"] = $dob;
+
+        // OPTIONAL: also send split values (can help if their backend expects it)
+        if ($dob) {
+            [$d, $m, $y] = explode('/', $dob);
+            $post["DOB{$i}_D"] = $d;
+            $post["DOB{$i}_M"] = $m;
+            $post["DOB{$i}_Y"] = $y;
+        }
+    }
+
+    // Debug what we’re about to send (optional)
+    // error_log('EHC POST: ' . print_r($post, true));
+
+    // Output auto-posting form
+    echo '<!doctype html><html><head><meta charset="utf-8"><title>Redirecting…</title></head><body>';
+    echo '<form id="ehcPost" method="POST" action="' . esc_url($target) . '">';
+
+    foreach ($post as $k => $v) {
+        echo '<input type="hidden" name="' . esc_attr($k) . '" value="' . esc_attr($v) . '">';
+    }
+
+    echo '</form>';
+    echo '<script>document.getElementById("ehcPost").submit();</script>';
+    echo '</body></html>';
+
+    exit;
+}, 10, 2);
