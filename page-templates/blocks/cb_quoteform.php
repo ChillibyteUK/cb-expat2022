@@ -1,9 +1,24 @@
 <style>
 .progress-circle{background-color:#00a0e3!important;border-color:#00a0e3!important;color:#fff!important;width:30px;height:30px;font-size:.8rem;z-index:99;text-decoration:none}.progress-circle.collapsed{background-color:#fff!important;border-color:#676b75!important;color:#676b75!important}.progress-grid::after,.progress-grid::before{border-bottom:1px solid #676b75;width:50%;position:absolute;content:"";top:15px}.progress-text{font-size:.7rem;color:#000}.progress-text.collapsed{color:#676b75}.small-text{font-size:.6rem}.providedby{color:#00a0e3!important;font-size:.8rem}.side-link{text-decoration:none;color:#000}.progress-grid{position:relative}.progress-grid::after{right:0}.progress-grid::before{left:0}.progress-grid:first-of-type::before,.progress-grid:last-of-type::after{display:none}.container-form-border{border-top:5px solid #2ca1d8;border-bottom:5px solid #2ca1d8}#gform_submit_button_4{border-radius:50rem;padding:.575rem 1.5rem;transition:.3s;box-shadow:rgba(0,0,0,.16) 0 3px 6px,rgba(0,0,0,.23) 0 3px 6px;color:#fff;background:#00a0e3;min-width:120px;border:none;font-size:.8rem}
+#gform_4 label {
+    font-weight: 400;
+}
+
+.gform_wrapper.gravity-theme #gform_4 .gfield_required {
+    display: none;
+}
+
+.quoteform .rounded {
+    border-radius: 1rem!important;
+}
+
+.quoteform .bg--grey-100 {
+    background-color: #F3F2EE;
+}
 </style>
 <!-- quoteform -->
-<section class="break-out bg--grey-100 mt-5 quoteform">
-    <div class="container pb-3">
+<section class="break-out mt-5 quoteform mb-5">
+    <div class="container pb-3 bg--grey-100 px-5 rounded shadow">
         <div class="row justify-content-center align-content-center">
             <h2 class="h3 text-center text--health mt-4"><?=get_field('title')?></h2>
             <p class="text-center fs-6"><?=get_field('subtitle')?></p>
