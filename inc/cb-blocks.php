@@ -1,5 +1,4 @@
 <?php
-
 function acf_blocks() {
 	if( function_exists('acf_register_block') ) {
 		acf_register_block(array(
@@ -331,6 +330,17 @@ function acf_blocks() {
 			'category'			=> 'layout',
 			'icon'				=> 'button',
 			'keywords'			=> array( 'expat', 'countries' ),
+			'mode'				=> 'edit',
+            'supports' => array('mode' => false),
+		));
+		acf_register_block(array(
+			'name'				=> 'cb_quoteform',
+			'title'				=> __('CB Quote Form'),
+			'description'		=> __(''),
+			'render_template'	=> 'page-templates/blocks/cb_quoteform.php',
+			'category'			=> 'layout',
+			'icon'				=> 'button',
+			'keywords'			=> array( 'expat' ),
 			'mode'				=> 'edit',
             'supports' => array('mode' => false),
 		));
