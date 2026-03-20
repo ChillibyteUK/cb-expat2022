@@ -61,7 +61,7 @@ wp_head();
     "name": "Expatriate Healthcare",
     "alternateName": "Expatriate Group",
     "url": "https://www.expatriatehealthcare.com/",
-    "logo": "https://www.expatriatehealthcare.com/wp-content/uploads/2018/01/EH-health-insurance-with-strap.jpg",
+    "logo": "https://www.expatriatehealthcare.com/wp-content/uploads/2022/05/Expatriate_BLUE.svg",
     "description": "Dedicated expat insurance provider protecting individuals, families & corporates worldwide. We give expats security when living abroad. Get a quote now!",
     "address": [
         {
