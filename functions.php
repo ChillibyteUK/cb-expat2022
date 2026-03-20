@@ -273,30 +273,45 @@ add_action('gform_after_submission_4', function($entry, $form) {
 
     $normalized_email = trim(strtolower($email));
     $hashed_email = hash('sha256', $normalized_email);
-    $email_for_js = wp_json_encode($hashed_email);
 
-    echo '<!doctype html><html><head><meta charset="utf-8"><title>Redirecting...</title></head><body>';
+    $hashed_email_js = wp_json_encode($hashed_email);
+
+    // Replace with your GA4 measurement ID
+    $ga4_id = 'G-XXXXXXXXXX';
+
+    echo '<!doctype html><html><head><meta charset="utf-8"><title>Redirecting...</title>';
+    echo '<script async src="https://www.googletagmanager.com/gtag/js?id=' . esc_attr($ga4_id) . '"></script>';
+    echo '<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "' . esc_js($ga4_id) . '");
+    </script>';
+    echo '</head><body>';
+
     echo '<form id="ehcPost" method="POST" action="' . esc_url($target) . '">';
-
     foreach ($post as $k => $v) {
         echo '<input type="hidden" name="' . esc_attr($k) . '" value="' . esc_attr($v) . '">';
     }
-
     echo '</form>';
 
     echo '<script>
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-        event: "step1_form_submit",
-        email: ' . $email_for_js . '
-    });
+      let submitted = false;
 
-    setTimeout(function() {
+      function go() {
+        if (submitted) return;
+        submitted = true;
         document.getElementById("ehcPost").submit();
-    }, 300);
+      }
+
+      gtag("event", "step1_form_submit", {
+        email: ' . $hashed_email_js . ',
+        event_callback: go
+      });
+
+      setTimeout(go, 1500);
     </script>';
 
     echo '</body></html>';
-
     exit;
 }, 10, 2);
