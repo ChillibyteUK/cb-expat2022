@@ -297,6 +297,7 @@ add_filter('gform_confirmation_4', function($confirmation, $form, $entry, $ajax)
             var form = document.createElement('form');
             form.method = 'POST';
             form.action = target;
+            form.target = '_self';
             form.style.display = 'none';
 
             Object.keys(payload).forEach(function(key) {
@@ -314,13 +315,18 @@ add_filter('gform_confirmation_4', function($confirmation, $form, $entry, $ajax)
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             event: 'step1_form_submit',
+            event_id: Date.now().toString(),
             email: <?php echo $hashed_email_json; ?>,
             qty_people: <?php echo (int) $qty; ?>,
             cover: <?php echo $cover_json; ?>
         });
 
-        // Smaller delay is usually enough
-        setTimeout(postToQuoteEngine, 300);
+        console.log('step1_form_submit pushed');
+
+        setTimeout(function() {
+            console.log('posting to quote engine');
+            postToQuoteEngine();
+        }, 1200);
     })();
     </script>
     <?php
