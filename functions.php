@@ -277,7 +277,7 @@ add_action('gform_after_submission_4', function($entry, $form) {
     $hashed_email_js = wp_json_encode($hashed_email);
 
     // Replace with your GA4 measurement ID
-    $ga4_id = 'G-XXXXXXXXXX';
+    $ga4_id = 'GTM-TD3KTSF';
 
     echo '<!doctype html><html><head><meta charset="utf-8"><title>Redirecting...</title>';
     echo '<script async src="https://www.googletagmanager.com/gtag/js?id=' . esc_attr($ga4_id) . '"></script>';
