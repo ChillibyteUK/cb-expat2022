@@ -258,8 +258,7 @@ add_filter('gform_confirmation_4', function($confirmation, $form, $entry, $ajax)
     for ($i = 1; $i <= min($qty, 10); $i++) {
         $gfFieldId = (string) (4 + $i);
         $rawDob    = (string) rgar($entry, $gfFieldId);
-
-        $dob = ehc_normalise_date_ddmmyyyy($rawDob);
+        $dob       = ehc_normalise_date_ddmmyyyy($rawDob);
 
         $post["DOB{$i}"] = $dob;
 
@@ -281,44 +280,48 @@ add_filter('gform_confirmation_4', function($confirmation, $form, $entry, $ajax)
 
     ob_start();
     ?>
-    <div style="display:none">Redirecting...</div>
+    <div id="ehc-redirecting" style="position:fixed;inset:0;background:#fff;z-index:99999;display:flex;align-items:center;justify-content:center;font:16px sans-serif;">
+        Redirecting…
+    </div>
+
     <script>
-      (function() {
+    (function() {
         var submitted = false;
         var target = <?php echo $target_json; ?>;
         var payload = <?php echo $payload_json; ?>;
 
         function postToQuoteEngine() {
-          if (submitted) return;
-          submitted = true;
+            if (submitted) return;
+            submitted = true;
 
-          var form = document.createElement('form');
-          form.method = 'POST';
-          form.action = target;
-          form.style.display = 'none';
+            var form = document.createElement('form');
+            form.method = 'POST';
+            form.action = target;
+            form.style.display = 'none';
 
-          Object.keys(payload).forEach(function(key) {
-            var input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = key;
-            input.value = payload[key];
-            form.appendChild(input);
-          });
+            Object.keys(payload).forEach(function(key) {
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = payload[key];
+                form.appendChild(input);
+            });
 
-          document.body.appendChild(form);
-          form.submit();
+            document.body.appendChild(form);
+            form.submit();
         }
 
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-          event: 'step1_form_submit',
-          email: <?php echo $hashed_email_json; ?>,
-          qty_people: <?php echo (int) $qty; ?>,
-          cover: <?php echo $cover_json; ?>
+            event: 'step1_form_submit',
+            email: <?php echo $hashed_email_json; ?>,
+            qty_people: <?php echo (int) $qty; ?>,
+            cover: <?php echo $cover_json; ?>
         });
 
-        setTimeout(postToQuoteEngine, 1500);
-      })();
+        // Smaller delay is usually enough
+        setTimeout(postToQuoteEngine, 300);
+    })();
     </script>
     <?php
     return ob_get_clean();
