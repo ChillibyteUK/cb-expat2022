@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="pt-5 pb-2">
-            <?php echo do_shortcode('[gravityform id="4" title="false" ajax="false"]'); ?>
+            <?php echo do_shortcode('[gravityform id="4" title="false" ajax="true"]'); ?>
         </div>
     </div>
 </section>
