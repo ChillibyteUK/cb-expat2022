@@ -232,7 +232,7 @@ function ehc_normalise_date_ddmmyyyy($raw) {
     return '';
 }
 
-add_action('gform_after_submission_4', function($entry, $form) {
+add_filter('gform_confirmation_4', function($confirmation, $form, $entry, $ajax) {
 
     $target = 'https://quote.expatriatehealthcare.com/healthcare';
 
@@ -272,46 +272,55 @@ add_action('gform_after_submission_4', function($entry, $form) {
     }
 
     $normalized_email = trim(strtolower($email));
-    $hashed_email = hash('sha256', $normalized_email);
+    $hashed_email     = hash('sha256', $normalized_email);
 
-    $hashed_email_js = wp_json_encode($hashed_email);
+    $payload_json      = wp_json_encode($post);
+    $hashed_email_json = wp_json_encode($hashed_email);
+    $cover_json        = wp_json_encode($coverVal);
+    $target_json       = wp_json_encode($target);
 
-    // Replace with your GA4 measurement ID
-    $ga4_id = 'GTM-TD3KTSF';
+    ob_start();
+    ?>
+    <div style="display:none">Redirecting...</div>
+    <script>
+      (function() {
+        var submitted = false;
+        var target = <?php echo $target_json; ?>;
+        var payload = <?php echo $payload_json; ?>;
 
-    echo '<!doctype html><html><head><meta charset="utf-8"><title>Redirecting...</title>';
-    echo '<script async src="https://www.googletagmanager.com/gtag/js?id=' . esc_attr($ga4_id) . '"></script>';
-    echo '<script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag("js", new Date());
-      gtag("config", "' . esc_js($ga4_id) . '");
-    </script>';
-    echo '</head><body>';
+        function postToQuoteEngine() {
+          if (submitted) return;
+          submitted = true;
 
-    echo '<form id="ehcPost" method="POST" action="' . esc_url($target) . '">';
-    foreach ($post as $k => $v) {
-        echo '<input type="hidden" name="' . esc_attr($k) . '" value="' . esc_attr($v) . '">';
-    }
-    echo '</form>';
+          var form = document.createElement('form');
+          form.method = 'POST';
+          form.action = target;
+          form.style.display = 'none';
 
-    echo '<script>
-      let submitted = false;
+          Object.keys(payload).forEach(function(key) {
+            var input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = key;
+            input.value = payload[key];
+            form.appendChild(input);
+          });
 
-      function go() {
-        if (submitted) return;
-        submitted = true;
-        document.getElementById("ehcPost").submit();
-      }
+          document.body.appendChild(form);
+          form.submit();
+        }
 
-      gtag("event", "step1_form_submit", {
-        email: ' . $hashed_email_js . ',
-        event_callback: go
-      });
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'step1_form_submit',
+          email: <?php echo $hashed_email_json; ?>,
+          qty_people: <?php echo (int) $qty; ?>,
+          cover: <?php echo $cover_json; ?>
+        });
 
-      setTimeout(go, 1500);
-    </script>';
+        setTimeout(postToQuoteEngine, 1500);
+      })();
+    </script>
+    <?php
+    return ob_get_clean();
 
-    echo '</body></html>';
-    exit;
-}, 10, 2);
+}, 10, 4);
