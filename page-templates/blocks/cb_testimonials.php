@@ -95,9 +95,12 @@ $background_colour = (get_field('background') == 'grey') ? 'bg--grey-100' : '';
 <section class="py-5 break-out <?=$background_colour?>">
     <div class="container">
         <h3 class="mb-4 text--<?=$theme?>">What our global customers say</h3>
-<div id="wid_1749544485275"></div>
+		<?= do_shortcode( '[brb_collection id=21854]' ); ?>
 	</div>
 </section>
+<?php
+/*
+<div id="wid_1749544485275"></div>
 <script>
 sc = document.createElement("script");
 sc.setAttribute("defer",true);
@@ -118,3 +121,4 @@ sc.setAttribute('lang', "us");
 sc.setAttribute('brandStyle', "%7B%22sidebar_background%22%3A%22%23191919%22%2C%22sidebar_text%22%3A%22white%22%2C%22brand_button_text_color%22%3A%22%231e1e1e%22%2C%22brand_main_color%22%3A%22%2326e47f%22%2C%22brand_button_border_radius%22%3A%226px%22%2C%22brand_sidebar_text_color_opacity%22%3A%22%23ffffff1a%22%2C%22brand_button_hover%22%3A%22rgb(73%2C%20232%2C%20148)%22%2C%22brand_button_active%22%3A%22rgb(25%2C%20201%2C%20107)%22%2C%22brand_main_color_opacity%22%3A%22%2326e47f1a%22%2C%22brand_font%22%3A%22Montserrat%22%2C%22star_color%22%3A%22%23fcd73e%22%2C%22brand_main_background%22%3A%22%23f6f8f7%22%2C%22brand_card_background%22%3A%22white%22%2C%22poweredByLink%22%3A%22https%3A%2F%2Frevyoo.co%22%2C%22poweredicon%22%3A%22https%3A%2F%2Frecensioni-io-static-folder.s3.eu-central-1.amazonaws.com%2Fpublic_onlinereviews%2Fapp.revyoo.co%2Fpowered.png%22%7D");
 document.getElementById("wid_1749544485275").appendChild(sc);
 </script>
+*/
