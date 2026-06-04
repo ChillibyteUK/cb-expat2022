@@ -358,7 +358,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_add_inline_script('datatables-js', "
     jQuery(document).ready(function($) {
 
-        var table = $('var table = $('.page-id-21887 table.retire-abroad-table');')
+        var table = $('var table = $('#retire-abroad-table');')
             .filter(function() {
                 return $(this).text().indexOf('The top 20 countries to retire abroad') === -1 &&
                        $(this).text().indexOf('Philippines') !== -1 &&
