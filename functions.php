@@ -356,49 +356,41 @@ add_action('wp_enqueue_scripts', function () {
     );
 
     wp_add_inline_script('datatables-js', "
-    jQuery(document).ready(function($) {
+        jQuery(document).ready(function($) {
 
-        var table = $('var table = $('#retire-abroad-table table');')
-            .filter(function() {
-                return $(this).text().indexOf('The top 20 countries to retire abroad') === -1 &&
-                       $(this).text().indexOf('Philippines') !== -1 &&
-                       $(this).text().indexOf('Overall Score') !== -1;
-            })
-            .first();
+            var table = $('#retire-abroad-table table').first();
 
-        if (!table.length) {
-            return;
-        }
+            if (!table.length) {
+                return;
+            }
 
-        table.attr('id', 'retire-abroad-table');
+            if (!table.find('thead').length) {
+                var firstRow = table.find('tbody tr:first');
+                var headerCells = firstRow.find('td');
 
-        if (!table.find('thead').length) {
-            var firstRow = table.find('tbody tr:first');
-            var headerCells = firstRow.find('td');
+                var thead = $('<thead><tr></tr></thead>');
 
-            var thead = $('<thead><tr></tr></thead>');
+                headerCells.each(function() {
+                    thead.find('tr').append('<th>' + $(this).html() + '</th>');
+                });
 
-            headerCells.each(function() {
-                thead.find('tr').append('<th>' + $(this).html() + '</th>');
+                firstRow.remove();
+                table.prepend(thead);
+            }
+
+            table.DataTable({
+                paging: false,
+                searching: false,
+                info: false,
+                order: [],
+                columnDefs: [
+                    {
+                        targets: 0,
+                        orderable: false
+                    }
+                ]
             });
 
-            firstRow.remove();
-            table.prepend(thead);
-        }
-
-        table.DataTable({
-            paging: false,
-            searching: false,
-            info: false,
-            order: [],
-            columnDefs: [
-                {
-                    targets: 0,
-                    orderable: false
-                }
-            ]
         });
-
-    });
     ");
 });
