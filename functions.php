@@ -333,3 +333,48 @@ add_filter('gform_confirmation_4', function($confirmation, $form, $entry, $ajax)
     return ob_get_clean();
 
 }, 10, 4);
+
+add_action('wp_enqueue_scripts', function () {
+
+    if (!is_page(21887)) {
+        return;
+    }
+
+    wp_enqueue_style(
+        'datatables-css',
+        'https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css',
+        [],
+        '2.0.8'
+    );
+
+    wp_enqueue_script(
+        'datatables-js',
+        'https://cdn.datatables.net/2.0.8/js/dataTables.min.js',
+        ['jquery'],
+        '2.0.8',
+        true
+    );
+
+    wp_add_inline_script('datatables-js', "
+        jQuery(document).ready(function($) {
+            var table = $('.page-id-21887 figure.wp-block-table table').first();
+
+            if (!table.length) {
+                return;
+            }
+
+            table.DataTable({
+                paging: false,
+                searching: false,
+                info: false,
+                order: [],
+                columnDefs: [
+                    {
+                        targets: 0,
+                        orderable: false
+                    }
+                ]
+            });
+        });
+    ");
+});
