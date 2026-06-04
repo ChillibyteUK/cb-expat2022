@@ -356,29 +356,39 @@ add_action('wp_enqueue_scripts', function () {
     );
 
     $js = <<<JS
-jQuery(function($) {
+    jQuery(function($) {
 
-    var table = $('.page-id-21887 figure.retire-abroad-table table').first();
+        var tableEl = $('.page-id-21887 figure.retire-abroad-table table').first();
 
-    if (!table.length) {
-        return;
-    }
+        if (!tableEl.length) {
+            return;
+        }
 
-    table.DataTable({
-        paging: false,
-        searching: false,
-        info: false,
-        order: [],
-        columnDefs: [
-            {
-                targets: 0,
-                orderable: false
-            }
-        ]
+        var table = tableEl.DataTable({
+            paging: false,
+            searching: false,
+            info: false,
+            order: [[2, 'desc']],
+            columnDefs: [
+                {
+                    targets: 0,
+                    searchable: false,
+                    orderable: false
+                }
+            ]
+        });
+
+        table.on('order.dt search.dt draw.dt', function() {
+            table.column(0, {
+                search: 'applied',
+                order: 'applied'
+            }).nodes().each(function(cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+
     });
-
-});
-JS;
+    JS;
 
     wp_add_inline_script('datatables-js', $js);
 });
