@@ -355,42 +355,30 @@ add_action('wp_enqueue_scripts', function () {
         true
     );
 
-    wp_add_inline_script('datatables-js', "
-        jQuery(document).ready(function($) {
+    $js = <<<JS
+jQuery(function($) {
 
-            var table = $('#retire-abroad-table table').first();
+    var table = $('.page-id-21887 figure.retire-abroad-table table').first();
 
-            if (!table.length) {
-                return;
+    if (!table.length) {
+        return;
+    }
+
+    table.DataTable({
+        paging: false,
+        searching: false,
+        info: false,
+        order: [],
+        columnDefs: [
+            {
+                targets: 0,
+                orderable: false
             }
+        ]
+    });
 
-            if (!table.find('thead').length) {
-                var firstRow = table.find('tbody tr:first');
-                var headerCells = firstRow.find('td');
+});
+JS;
 
-                var thead = $('<thead><tr></tr></thead>');
-
-                headerCells.each(function() {
-                    thead.find('tr').append('<th>' + $(this).html() + '</th>');
-                });
-
-                firstRow.remove();
-                table.prepend(thead);
-            }
-
-            table.DataTable({
-                paging: false,
-                searching: false,
-                info: false,
-                order: [],
-                columnDefs: [
-                    {
-                        targets: 0,
-                        orderable: false
-                    }
-                ]
-            });
-
-        });
-    ");
+    wp_add_inline_script('datatables-js', $js);
 });
