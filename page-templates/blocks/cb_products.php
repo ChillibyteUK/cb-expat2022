@@ -32,18 +32,35 @@ if( have_rows('product') ):
                     }
 
                     $image = get_sub_field('logo');
-                    if( !empty( $image ) ) {
+
+                    $image_url = '';
+                    $image_alt = '';
+
+                    if (is_array($image)) {
+                        $image_url = $image['url'] ?? '';
+                        $image_alt = $image['alt'] ?? '';
+                    } elseif (is_numeric($image)) {
+                        $image_url = wp_get_attachment_image_url((int) $image, 'full');
+                        $image_alt = get_post_meta((int) $image, '_wp_attachment_image_alt', true);
+                    } elseif (is_string($image)) {
+                        $image_url = $image;
+                    }
+
+                    if ($image_url) {
                         ?>
-                    <div class="px-5 my-3 mb-4"><img src="<?=esc_url($image['url'])?>" alt="<?=esc_attr($image['alt'])?>" style="max-width:207px" class="card-img-top img-fluid" /></div>
+                        <div class="px-5 my-3 mb-4">
+                            <img
+                                src="<?= esc_url($image_url); ?>"
+                                alt="<?= esc_attr($image_alt); ?>"
+                                style="max-width:207px"
+                                class="card-img-top img-fluid"
+                            />
+                        </div>
                         <?php
                     }
                     ?>
                     <div class="text_<?=get_sub_field('theme')?>"><?=get_sub_field('text')?></div>
                 </div>
-                <!-- <div class="card-footer text-center no_background py-4">
-                    <?php $link = get_sub_field('link'); ?>
-                    <a href="<?=$link['url']?>" class="no_decoration text--<?=get_sub_field('theme')?>"><?=$link['title']?></a>
-                </div> -->
             </div>
         </div>
 <?php
