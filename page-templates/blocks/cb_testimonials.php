@@ -1,5 +1,4 @@
 <?php
-/*
 // $theme = get_field('page_theme',get_the_ID());
 $theme = 'black';
 $background_colour = (get_field('background') == 'grey') ? 'bg--grey-100' : '';
@@ -87,7 +86,7 @@ add_action('wp_footer',function(){
     <?php
 },9999);
 
-*/
+/*
 
 $theme = 'black';
 $background_colour = (get_field('background') == 'grey') ? 'bg--grey-100' : '';
