@@ -1,5 +1,5 @@
 <?php
-/*
+
 // $theme = get_field('page_theme',get_the_ID());
 $theme = 'black';
 $background_colour = (get_field('background') == 'grey') ? 'bg--grey-100' : '';
@@ -58,7 +58,11 @@ $ppp = get_field('max_num');
                     </div>
             </div>
             <div class="col-lg-5 align-items-center d-flex flex-d align-self-center flex-column">
-                <img src="https://www.expatriatehealthcare.com/wp-content/uploads/2024/05/trustpilot-24.png" alt="Trustpilot" />
+                <!-- TrustBox widget - Mini -->
+                <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="51e2b3e8000064000557578c" data-style-height="150px" data-style-width="100%" data-token="d636b98c-a2ba-4bb4-9071-6fe408193970">
+                <a href="https://www.trustpilot.com/review/expatriatehealthcare.com" target="_blank" rel="noopener">Trustpilot</a>
+                </div>
+                <!-- End TrustBox widget -->
             </div>
         </div>
     </div>
@@ -66,6 +70,7 @@ $ppp = get_field('max_num');
 <?php
 add_action('wp_footer',function(){
     ?>
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 <script>
 (function($){
 	$('.cb_testimonial_slick_alt').slick({
@@ -87,8 +92,7 @@ add_action('wp_footer',function(){
     <?php
 },9999);
 
-*/
-
+/*
 $theme = 'black';
 $background_colour = (get_field('background') == 'grey') ? 'bg--grey-100' : '';
 ?>
