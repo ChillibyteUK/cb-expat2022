@@ -61,9 +61,9 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-center mt-4">
-                            <!-- TrustBox widget - Mini -->
-                            <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="51e2b3e8000064000557578c" data-style-height="100%x" data-style-width="150px" data-token="773ffe52-2409-41ca-bcb8-01e34ce33e49">
-                                <a href="https://www.trustpilot.com/review/expatriatehealthcare.com" target="_blank" rel="noopener">Trustpilot</a>
+                            <!-- TrustBox widget - Micro Combo -->
+                            <div class="trustpilot-widget" data-locale="en-US" data-template-id="5419b6ffb0d04a076446a9af" data-businessunit-id="51e2b3e8000064000557578c" data-style-height="20px" data-style-width="100%" data-token="95252cc4-e600-476b-a083-0faee7a37710">
+                            <a href="https://www.trustpilot.com/review/expatriatehealthcare.com" target="_blank" rel="noopener">Trustpilot</a>
                             </div>
                             <!-- End TrustBox widget -->
                         </div>
