@@ -60,7 +60,7 @@
                                 <div class="text--black"><?=$stats['stat_text_3']?></div>
                             </div>
                         </div>
-                        <div class="d-flex justify-content-center mt-4">
+                        <div class="mt-4">
                             <!-- TrustBox widget - Micro Combo -->
                             <div class="trustpilot-widget" data-locale="en-US" data-template-id="5419b6ffb0d04a076446a9af" data-businessunit-id="51e2b3e8000064000557578c" data-style-height="20px" data-style-width="100%" data-token="95252cc4-e600-476b-a083-0faee7a37710">
                             <a href="https://www.trustpilot.com/review/expatriatehealthcare.com" target="_blank" rel="noopener">Trustpilot</a>
