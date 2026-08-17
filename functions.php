@@ -107,6 +107,24 @@ function add_trustpilot_code(){
 }
 add_action('wp_head', 'add_trustpilot_code');
 
+function add_clarity_code(){
+    if ( is_admin() || is_user_logged_in() ) {
+        return;
+    }
+?>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "y3rjnl9eig");
+</script>
+<!-- End Microsoft Clarity -->
+<?php
+}
+add_action('wp_head', 'add_clarity_code', 1);
+
 function bg_disable_front_page_wpseo_next_rel_link( $link ) {
     if ( is_post_type_archive( 'country' ) ) {
         return false;
