@@ -361,9 +361,9 @@ add_filter('gform_confirmation_5', function($confirmation, $form, $entry, $ajax)
     $email = (string) rgar($entry, '4');
 
     $coverVal = '0';
-    if (stripos($cover, 'Area 1') === 0) $coverVal = '1';
-    if (stripos($cover, 'Area 2') === 0) $coverVal = '2';
-    if (stripos($cover, 'Area 3') === 0) $coverVal = '3';
+    if (stripos($cover, 'Single') === 0) $coverVal = '1';
+    if (stripos($cover, 'One Way') === 0) $coverVal = '2';
+    if (stripos($cover, 'Annual') === 0) $coverVal = '3';
 
     $post = [
         'QtyPeople'  => (string) $qty,
