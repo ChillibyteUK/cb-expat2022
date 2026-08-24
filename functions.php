@@ -385,16 +385,18 @@ add_filter('gform_confirmation_5', function($confirmation, $form, $entry, $ajax)
 
     if ($TravelStart_calc) {
         [$d, $m, $y] = explode('/', $TravelStart_calc);
-        $post["TravelStart{$i}_D"] = $d;
-        $post["TravelStart{$i}_M"] = $m;
-        $post["TravelStart{$i}_Y"] = $y;
+        $post['TravelStart']   = $TravelStart_calc;
+        $post['TravelStart_D'] = $d;
+        $post['TravelStart_M'] = $m;
+        $post['TravelStart_Y'] = $y;
     }
 
     if ($TravelEnd_calc) {
         [$d, $m, $y] = explode('/', $TravelEnd_calc);
-        $post["TravelEnd{$i}_D"] = $d;
-        $post["TravelEnd{$i}_M"] = $m;
-        $post["TravelEnd{$i}_Y"] = $y;
+        $post['TravelEnd']   = $TravelEnd_calc;
+        $post['TravelEnd_D'] = $d;
+        $post['TravelEnd_M'] = $m;
+        $post['TravelEnd_Y'] = $y;
     }
 
     for ($i = 1; $i <= min($qty, 10); $i++) {
