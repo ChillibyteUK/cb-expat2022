@@ -360,6 +360,7 @@ add_filter('gform_confirmation_5', function($confirmation, $form, $entry, $ajax)
     $cover = (string) rgar($entry, '3');
     $email = (string) rgar($entry, '4');
     $destination = (string) rgar($entry, '15');
+    $CountryISO = (string) rgar($entry, '16');
 
     $coverVal = '0';
     if (stripos($cover, 'Single') === 0) $coverVal = '1';
@@ -370,6 +371,7 @@ add_filter('gform_confirmation_5', function($confirmation, $form, $entry, $ajax)
         'QtyPeople'  => (string) $qty,
         'PolicyType'      => $coverVal,
         'Destination'      => $destination,
+        'CountryISO'      => $CountryISO,
         'Email'      => $email,
         'QuickQuote' => '1',
         'QuoteID'    => '0',
