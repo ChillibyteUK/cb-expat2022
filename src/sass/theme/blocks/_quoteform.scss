@@ -1,13 +1,19 @@
+// Colour-per-form-type map, mirroring $form_types in
+// page-templates/blocks/cb_quoteform.php. `colour` is used for the progress
+// circles and submit button, `accent` for the title and form border.
+$quoteform-themes: (
+    healthcare: (colour: #00A0E3, accent: $health, form-id: 4),
+    travel:     (colour: $travel,  accent: $travel, form-id: 5),
+);
+
 .quoteform {
     .progress-circle {
-        background-color: #00A0E3 !important;
-        border-color: #00A0E3 !important;
-        color: #fff !important;
         width: 30px;
         height: 30px;
         font-size: 0.8rem;
         z-index: 99;
         text-decoration: none;
+        color: #fff !important;
     }
 
     .progress-circle.collapsed {
@@ -30,7 +36,6 @@
     }
 
     .providedby {
-        color: #00A0E3  !important;
       font-size: 0.8rem;
     }
 
@@ -68,21 +73,42 @@
     .progress-grid:last-of-type::after {
       display:none;
     }
+}
 
-    .container-form-border {
-        border-top: 5px solid #2ca1d8;
-        border-bottom: 5px solid #2ca1d8;
-    }
+@each $name, $theme in $quoteform-themes {
+    $colour: map-get($theme, colour);
+    $accent: map-get($theme, accent);
+    $form-id: map-get($theme, form-id);
 
-    #gform_submit_button_4 {
-        border-radius: 50rem;
-        padding: .575rem 1.5rem;
-        transition: all .3s ease;
-        box-shadow: rgba(0, 0, 0, .16) 0 3px 6px, rgba(0, 0, 0, .23) 0 3px 6px;
-        color: #fff;
-        background: #00A0E3;
-        min-width: 120px;
-        border: none;
-        font-size: 0.8rem;
+    .quoteform.quoteform--#{$name} {
+        .progress-circle {
+            background-color: $colour !important;
+            border-color: $colour !important;
+        }
+
+        .providedby {
+            color: $colour !important;
+        }
+
+        .quoteform__title {
+            color: $accent !important;
+        }
+
+        .container-form-border {
+            border-top: 5px solid $accent;
+            border-bottom: 5px solid $accent;
+        }
+
+        ##{'gform_submit_button_' + $form-id} {
+            border-radius: 50rem;
+            padding: .575rem 1.5rem;
+            transition: all .3s ease;
+            box-shadow: rgba(0, 0, 0, .16) 0 3px 6px, rgba(0, 0, 0, .23) 0 3px 6px;
+            color: #fff;
+            background: $colour;
+            min-width: 120px;
+            border: none;
+            font-size: 0.8rem;
+        }
     }
 }
