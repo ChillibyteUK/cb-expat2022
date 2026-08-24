@@ -352,6 +352,108 @@ add_filter('gform_confirmation_4', function($confirmation, $form, $entry, $ajax)
 
 }, 10, 4);
 
+add_filter('gform_confirmation_5', function($confirmation, $form, $entry, $ajax) {
+
+    $target = 'https://quote.expatriatehealthcare.com/travel';
+
+    $qty   = (int) rgar($entry, '1');
+    $cover = (string) rgar($entry, '3');
+    $email = (string) rgar($entry, '4');
+
+    $coverVal = '0';
+    if (stripos($cover, 'Area 1') === 0) $coverVal = '1';
+    if (stripos($cover, 'Area 2') === 0) $coverVal = '2';
+    if (stripos($cover, 'Area 3') === 0) $coverVal = '3';
+
+    $post = [
+        'QtyPeople'  => (string) $qty,
+        'Cover'      => $coverVal,
+        'Email'      => $email,
+        'QuickQuote' => '1',
+        'QuoteID'    => '0',
+        'Step'       => '1',
+        'Section'    => 'process',
+    ];
+
+    for ($i = 1; $i <= min($qty, 10); $i++) {
+        $gfFieldId = (string) (4 + $i);
+        $rawDob    = (string) rgar($entry, $gfFieldId);
+        $dob       = ehc_normalise_date_ddmmyyyy($rawDob);
+
+        $post["DOB{$i}"] = $dob;
+
+        if ($dob) {
+            [$d, $m, $y] = explode('/', $dob);
+            $post["DOB{$i}_D"] = $d;
+            $post["DOB{$i}_M"] = $m;
+            $post["DOB{$i}_Y"] = $y;
+        }
+    }
+
+    $normalized_email = trim(strtolower($email));
+    $hashed_email     = hash('sha256', $normalized_email);
+
+    $payload_json      = wp_json_encode($post);
+    $hashed_email_json = wp_json_encode($hashed_email);
+    $cover_json        = wp_json_encode($coverVal);
+    $target_json       = wp_json_encode($target);
+
+    ob_start();
+    ?>
+    <div id="ehc-redirecting" style="position:fixed;inset:0;background:#fff;z-index:99999;display:flex;align-items:center;justify-content:center;font:16px sans-serif;">
+        Redirecting…
+    </div>
+
+    <script>
+    (function() {
+        var submitted = false;
+        var target = <?php echo $target_json; ?>;
+        var payload = <?php echo $payload_json; ?>;
+
+        function postToQuoteEngine() {
+            if (submitted) return;
+            submitted = true;
+
+            var form = document.createElement('form');
+            form.method = 'POST';
+            form.action = target;
+            form.target = '_self';
+            form.style.display = 'none';
+
+            Object.keys(payload).forEach(function(key) {
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = payload[key];
+                form.appendChild(input);
+            });
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'step1_form_submit',
+            event_id: Date.now().toString(),
+            email: <?php echo $hashed_email_json; ?>,
+            qty_people: <?php echo (int) $qty; ?>,
+            cover: <?php echo $cover_json; ?>
+        });
+
+        console.log('step1_form_submit pushed');
+
+        setTimeout(function() {
+            console.log('posting to quote engine');
+            postToQuoteEngine();
+        }, 1200);
+    })();
+    </script>
+    <?php
+    return ob_get_clean();
+
+}, 10, 4);
+
 add_action('wp_enqueue_scripts', function () {
 
     if (!is_page(21887)) {
