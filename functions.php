@@ -361,6 +361,10 @@ add_filter('gform_confirmation_5', function($confirmation, $form, $entry, $ajax)
     $email = (string) rgar($entry, '4');
     $destination = (string) rgar($entry, '15');
     $CountryISO = (string) rgar($entry, '16');
+    $TravelStart = (string) rgar($entry, '18');
+    $TravelEnd = (string) rgar($entry, '17');
+    $TravelStart_calc       = ehc_normalise_date_ddmmyyyy($TravelStart);
+    $TravelEnd_calc       = ehc_normalise_date_ddmmyyyy($TravelEnd);
 
     $coverVal = '0';
     if (stripos($cover, 'Single') === 0) $coverVal = '1';
@@ -378,6 +382,20 @@ add_filter('gform_confirmation_5', function($confirmation, $form, $entry, $ajax)
         'Step'       => '1',
         'Section'    => 'process',
     ];
+
+    if ($TravelStart_calc) {
+        [$d, $m, $y] = explode('/', $TravelStart_calc);
+        $post["TravelStart{$i}_D"] = $d;
+        $post["TravelStart{$i}_M"] = $m;
+        $post["TravelStart{$i}_Y"] = $y;
+    }
+
+    if ($TravelEnd_calc) {
+        [$d, $m, $y] = explode('/', $TravelEnd_calc);
+        $post["TravelEnd{$i}_D"] = $d;
+        $post["TravelEnd{$i}_M"] = $m;
+        $post["TravelEnd{$i}_Y"] = $y;
+    }
 
     for ($i = 1; $i <= min($qty, 10); $i++) {
         $gfFieldId = (string) (4 + $i);
