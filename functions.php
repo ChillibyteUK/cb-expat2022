@@ -367,7 +367,7 @@ add_filter('gform_confirmation_5', function($confirmation, $form, $entry, $ajax)
 
     $post = [
         'QtyPeople'  => (string) $qty,
-        'Cover'      => $coverVal,
+        'PolicyType'      => $coverVal,
         'Email'      => $email,
         'QuickQuote' => '1',
         'QuoteID'    => '0',
