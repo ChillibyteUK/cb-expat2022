@@ -162,6 +162,7 @@ if ( is_front_page() ) {
 					<div class="d-flex justify-content-between flex-wrap gap-4">
 						<a href="https://specialistrisk.com/" target="_blank" class="text-decoration-underline text-white">Visit the Specialist Risk Group website</a>
 						<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/SRG%20docs/SRG%20Anti-Fraud%20Statement%201.0_08_25.pdf" target="_blank" class="text-decoration-underline text-white">Anti-Fraud Statement</a>
+						<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/Gender%20Pay%20Gap%20Report%202024-1.pdf" target="_blank" class="text-decoration-underline text-white">Gender Pay Gap</a>
 						<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/Modern%20Slavery%20Act/FY%2031%20Dec%202025%20Modern%20Slavery%20Act%20Statement.pdf" target="_blank" class="text-decoration-underline text-white">Modern Slavery Statement</a>
 						<a href="https://specialistrisk.com/hubfs/SRG_Code_of_Conduct.pdf" target="_blank" class="text-decoration-underline text-white">Code of Conduct</a>
 						<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/SRG%20docs/How%20to%20make%20a%20complaint%201.2_0226.pdf" target="_blank" class="text-decoration-underline text-white">Complaints procedure</a>
