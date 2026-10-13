@@ -165,6 +165,7 @@ if ( is_front_page() ) {
 						<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/Gender%20Pay%20Gap%20Report%202024-1.pdf" target="_blank" class="text-decoration-underline text-white">Gender Pay Gap</a>
 						<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/Modern%20Slavery%20Act/FY%2031%20Dec%202025%20Modern%20Slavery%20Act%20Statement.pdf" target="_blank" class="text-decoration-underline text-white">Modern Slavery Statement</a>
 						<a href="https://specialistrisk.com/hubfs/SRG_Code_of_Conduct.pdf" target="_blank" class="text-decoration-underline text-white">Code of Conduct</a>
+						<a href="https://specialistrisk.com/hubfs/Code%20of%20Conduct%20Suppliers%20Finall-1.pdf" target="_blank" class="text-decoration-underline text-white">Supplier Code of Conduct</a>
 						<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/SRG%20docs/How%20to%20make%20a%20complaint%201.2_0226.pdf" target="_blank" class="text-decoration-underline text-white">Complaints procedure</a>
 						<a href="https://secure.ethicspoint.eu/domain/media/en/gui/115636/index.html" target="_blank" class="text-decoration-underline text-white">Whistleblowing Facility</a>
 						<a href="https://specialistrisk.com/privacy-policy/" target="_blank" class="text-decoration-underline text-white">SRG Privacy Policy</a>
