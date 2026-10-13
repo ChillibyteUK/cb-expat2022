@@ -152,24 +152,28 @@ if ( is_front_page() ) {
 				Non-European Union resident policies are sold by Strategic Insurance Services Limited (SISL). SISL is authorised and regulated by the Financial Conduct Authority (FCA) in the United Kingdom. FCA Firm Reference Number is 307133. SISL is authorised to carry on Regulated Activities in accordance with the permissions granted by the FCA under PART IV of the Financial Services and Markets ACT 2000. Address: Delmon House, 36-38 Church Road, Burgess Hill RH15 9AE, United Kingdom.<br><br>European Union resident policies are sold by Strategic Insurance Brokers (Cyprus) Ltd (SIBC). Company Number: HE394431. SIBC is authorised and regulated by the Cypriot Insurance Superintendent, per Authorization Number: 7255. Address: Androkleous 19a, 1061 Nicosia, Cyprus.
 				<br>
 				<br>
-				<?= do_shortcode( '[srg_logo]' ); ?>Strategic Insurance Services Limited is part of the Specialist Risk Group (SRG), one of the fastest-growing groups of insurance intermediaries in the UK, placing £1.6 BN of premium into the Global insurance market. SRG brings together individuals and businesses from across the world with a plethora of UK and international broking and underwriting specialisms, serving more than 120,000 clients.
-				<br>
-				<br>
 				Insurance solutions are subject to underwriting acceptance, terms and conditions, individual insurer criteria and applicable regulations. Availability of cover will depend on the specific circumstances of each risk.
 				<br>
 				<br>
-				For more information about how we use and disclose your personal information, your rights under data protection law and who you can contact, please refer to our <a href="https://specialistrisk.com/privacy-policy/" target="_blank" class="text-decoration-underline text-white">privacy notice</a>.<br><br>
-					<div class="d-flex justify-content-between flex-wrap gap-4">
-						<a href="https://specialistrisk.com/" target="_blank" class="text-decoration-underline text-white">Visit the Specialist Risk Group website</a>
-						<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/SRG%20docs/SRG%20Anti-Fraud%20Statement%201.0_08_25.pdf" target="_blank" class="text-decoration-underline text-white">Anti-Fraud Statement</a>
-						<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/Gender%20Pay%20Gap%20Report%202024-1.pdf" target="_blank" class="text-decoration-underline text-white">Gender Pay Gap</a>
-						<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/Modern%20Slavery%20Act/FY%2031%20Dec%202025%20Modern%20Slavery%20Act%20Statement.pdf" target="_blank" class="text-decoration-underline text-white">Modern Slavery Statement</a>
-						<a href="https://specialistrisk.com/hubfs/SRG_Code_of_Conduct.pdf" target="_blank" class="text-decoration-underline text-white">Code of Conduct</a>
-						<a href="https://specialistrisk.com/hubfs/Code%20of%20Conduct%20Suppliers%20Finall-1.pdf" target="_blank" class="text-decoration-underline text-white">Supplier Code of Conduct</a>
-						<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/SRG%20docs/How%20to%20make%20a%20complaint%201.2_0226.pdf" target="_blank" class="text-decoration-underline text-white">Complaints procedure</a>
-						<a href="https://secure.ethicspoint.eu/domain/media/en/gui/115636/index.html" target="_blank" class="text-decoration-underline text-white">Whistleblowing Facility</a>
-						<a href="https://specialistrisk.com/privacy-policy/" target="_blank" class="text-decoration-underline text-white">SRG Privacy Policy</a>
-					</div>
+				<?= do_shortcode( '[srg_logo]' ); ?>Strategic Insurance Services Limited is part of the Specialist Risk Group (SRG), one of the fastest-growing groups of insurance intermediaries in the UK, placing £2BN of premium into the Global insurance market. SRG brings together individuals and businesses from across the world with a plethora of UK and international broking and underwriting specialisms, serving more than 120,000 clients.
+				<br>
+				<br>
+				For more information about how we use and disclose your personal information, your rights under data protection law and who you can contact, please refer to our <a href="https://specialistrisk.com/privacy-policy/" target="_blank" class="text-decoration-underline text-white">privacy notice</a>.
+				<br>
+				<br>
+				<a href="https://specialistrisk.com/" target="_blank" class="text-decoration-underline text-white">Visit the Specialist Risk Group website</a>
+				<br>
+				<br>
+				<div class="d-flex justify-content-between flex-wrap gap-4">
+
+					<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/SRG%20docs/SRG%20Anti-Fraud%20Statement%201.0_08_25.pdf" target="_blank" class="text-decoration-underline text-white">Anti-Fraud Statement</a>
+					<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/Gender%20Pay%20Gap%20Report%202024-1.pdf" target="_blank" class="text-decoration-underline text-white">Gender Pay Gap</a>
+					<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/Modern%20Slavery%20Act/FY%2031%20Dec%202025%20Modern%20Slavery%20Act%20Statement.pdf" target="_blank" class="text-decoration-underline text-white">Modern Slavery Statement</a>
+					<a href="https://specialistrisk.com/hubfs/SRG_Code_of_Conduct.pdf" target="_blank" class="text-decoration-underline text-white">Code of Conduct</a>
+					<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/SRG%20docs/How%20to%20make%20a%20complaint%201.2_0226.pdf" target="_blank" class="text-decoration-underline text-white">Complaints procedure</a>
+					<a href="https://secure.ethicspoint.eu/domain/media/en/gui/115636/index.html" target="_blank" class="text-decoration-underline text-white">Whistleblowing Facility</a>
+					<a href="https://specialistrisk.com/privacy-policy/" target="_blank" class="text-decoration-underline text-white">SRG Privacy Policy</a>
+				</div>
 			</div><!--col end -->
 		</div><!-- row end -->
 
