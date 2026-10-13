@@ -224,7 +224,7 @@ function get_country_guides_by_country( $country_name ) {
 
 // Add shortcode [srg_logo]
 function srg_logo_shortcode() {
-    $logo_url = 'https://www.expatriatehealthcare.com/wp-content/uploads/2025/10/SRG-Teal-300x60.png';
+    $logo_url = 'https://www.expatriatehealthcare.com/wp-content/uploads/2025/10/SRG-Group-White-scaled.png';
 
     return '<a href="https://specialistrisk.com/" target="_blank"><img src="' . esc_url( $logo_url ) . '" alt="SRG Logo" 
         class="img-fluid mx-auto d-block d-sm-inline float-sm-end ms-sm-3 mb-3 srg-logo" /></a>';
