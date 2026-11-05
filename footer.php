@@ -172,7 +172,7 @@ if ( is_front_page() ) {
 					<a href="https://specialistrisk.com/hubfs/SRG_Code_of_Conduct.pdf" target="_blank" class="text-decoration-underline text-white">Code of Conduct</a>
 					<a href="https://9176153.fs1.hubspotusercontent-na1.net/hubfs/9176153/SRG%20docs/How%20to%20make%20a%20complaint%201.2_0226.pdf" target="_blank" class="text-decoration-underline text-white">Complaints procedure</a>
 					<a href="https://secure.ethicspoint.eu/domain/media/en/gui/115636/index.html" target="_blank" class="text-decoration-underline text-white">Whistleblowing Facility</a>
-					<a href="https://specialistrisk.com/privacy-policy/" target="_blank" class="text-decoration-underline text-white">SRG Privacy Policy</a>
+					<a href="https://www.expatriatehealthcare.com/wp-content/uploads/2026/11/Privacy-Notice-Oct-2026.pdf" target="_blank" class="text-decoration-underline text-white">SRG Privacy Policy</a>
 				</div>
 			</div><!--col end -->
 		</div><!-- row end -->
