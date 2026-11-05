@@ -158,7 +158,7 @@ if ( is_front_page() ) {
 				<?= do_shortcode( '[srg_logo]' ); ?>Strategic Insurance Services Limited is part of the Specialist Risk Group (SRG), one of the fastest-growing groups of insurance intermediaries in the UK, placing £2BN of premium into the Global insurance market. SRG brings together individuals and businesses from across the world with a plethora of UK and international broking and underwriting specialisms, serving more than 120,000 clients.
 				<br>
 				<br>
-				For more information about how we use and disclose your personal information, your rights under data protection law and who you can contact, please refer to our <a href="https://specialistrisk.com/privacy-policy/" target="_blank" class="text-decoration-underline text-white">privacy notice</a>.
+				For more information about how we use and disclose your personal information, your rights under data protection law and who you can contact, please refer to our <a href="https://www.expatriatehealthcare.com/wp-content/uploads/2026/11/Privacy-Notice-Oct-2026.pdf" target="_blank" class="text-decoration-underline text-white">privacy notice</a>.
 				<br>
 				<br>
 				<a href="https://specialistrisk.com/" target="_blank" class="text-decoration-underline text-white">Visit the Specialist Risk Group website</a>
